@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Integritetspolicy — Samio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <header>
+    <a class="back" href="index.html">← Tillbaka</a>
+    <h1>Integritetspolicy</h1>
+    <p class="meta">Senast uppdaterad: 21 april 2026 · <a href="privacy.html">English</a></p>
+  </header>
+
+  <p>Den här policyn beskriver hur <strong>Samio</strong> ("vi", "oss") samlar in och behandlar personuppgifter när du använder Samio-appen. Vi tar din integritet på allvar och samlar bara in det som behövs för att driva tjänsten.</p>
+
+  <h2>1. Personuppgiftsansvarig</h2>
+  <p>Samio drivs från Sverige. Kontakta oss på <a href="mailto:support@samio.app">support@samio.app</a> om du har frågor eller vill utöva dina rättigheter.</p>
+
+  <h2>2. Vad vi samlar in</h2>
+
+  <h3>Kontouppgifter</h3>
+  <ul>
+    <li>E-postadress (från registrering eller Sign in with Apple, inklusive Apples privata relä-adresser)</li>
+    <li>Visningsnamn</li>
+    <li>Lösenord (lagras endast som bcrypt-hash — vi ser aldrig ditt lösenord i klartext)</li>
+    <li>Apple-subjektidentifierare (om du loggar in med Apple)</li>
+  </ul>
+
+  <h3>Familj- och bebisuppgifter</h3>
+  <ul>
+    <li>Barnets namn, födelsedatum, eventuellt kön och en valfri bild du laddar upp</li>
+    <li>Information om hushåll och inbjudningar du skickar till medföräldrar</li>
+    <li>Matningshändelser, sömnpass, blöjbyten, mjölklager, tillväxtmätningar (vikt, längd, huvudomfång) och eventuella anteckningar</li>
+  </ul>
+
+  <h3>Enhets- och tekniska uppgifter</h3>
+  <ul>
+    <li>Enhets-ID och plattform (iOS/Android) för sessionshantering</li>
+    <li>Expo push-notistoken (endast om du tillåter notiser)</li>
+    <li>IP-adress för förfrågningar, används enbart för rate-limiting och säkerhet — sparas inte långsiktigt</li>
+  </ul>
+
+  <h2>3. Varför vi behandlar dina uppgifter (rättslig grund)</h2>
+  <ul>
+    <li><strong>För att leverera tjänsten (avtal, GDPR art. 6.1.b):</strong> lagra dina loggar, synka mellan dig och din medförälder, hålla dig inloggad, skicka påminnelser.</li>
+    <li><strong>Ditt samtycke (GDPR art. 6.1.a):</strong> push-notiser, åtkomst till bildbibliotek och kamera. Du kan återkalla detta i enhetens inställningar när du vill.</li>
+    <li><strong>Berättigat intresse (GDPR art. 6.1.f):</strong> säkerhet, förebyggande av bedrägerier, rate-limiting, upptäckt av missbruk.</li>
+  </ul>
+
+  <h2>4. Vem vi delar data med</h2>
+  <p>Vi säljer <strong>inte</strong> dina uppgifter. Vi delar endast med:</p>
+  <ul>
+    <li><strong>Medföräldrar du bjudit in</strong> till ditt hushåll — de ser samma bebisdata som du.</li>
+    <li><strong>Apple</strong> — om du använder Sign in with Apple (deras integritetspolicy gäller för det flödet).</li>
+    <li><strong>Expo Push Notification Service</strong> (drivs av Expo, Inc.) — levererar påminnelser till din enhet. De ser endast push-token och innehållet i notisen.</li>
+    <li><strong>Vår hostingleverantör</strong> — databasen och API-servrarna körs hos en etablerad molnleverantör inom EU/EES.</li>
+  </ul>
+  <p>Vi använder inga tredjeparts-analyser, annonser eller spårnings-SDK:er.</p>
+
+  <h2>5. Lagringstid</h2>
+  <ul>
+    <li>Konto- och familjedata sparas så länge ditt konto finns.</li>
+    <li>Refresh-tokens upphör 30 dagar efter senaste användning.</li>
+    <li>Inbjudningar upphör efter 7 dagar.</li>
+    <li>Rate-limit-data sparas i upp till 24 timmar.</li>
+    <li>När du raderar ditt konto (se avsnitt 7) raderas all personlig data permanent inom rimlig tid, inklusive återkallning av eventuella Apple Sign-In-tokens.</li>
+  </ul>
+  <p>Om ditt hushåll har en medförälder tar raderingen av ditt konto bort dig från det. Hushållet och bebisdatan finns kvar hos medföräldern. Om du är enda medlemmen raderas hela hushållet och alla loggar.</p>
+
+  <h2>6. Säkerhet</h2>
+  <ul>
+    <li>All nätverkstrafik använder HTTPS/TLS.</li>
+    <li>Lösenord hashas med bcrypt.</li>
+    <li>Refresh-tokens och reset-tokens peppras och hashas i vila.</li>
+    <li>Access-tokens är kortlivade och JWT-signerade.</li>
+    <li>Token-återanvändningsskydd finns — stulna tokens återkallas automatiskt.</li>
+  </ul>
+  <p>Inget system är helt säkert. Om du misstänker obehörig åtkomst, mejla oss omedelbart.</p>
+
+  <h2>7. Dina rättigheter</h2>
+  <p>Enligt GDPR har du rätt att:</p>
+  <ul>
+    <li><strong>Få tillgång</strong> — se vilka uppgifter vi har om dig.</li>
+    <li><strong>Rätta</strong> — korrigera felaktiga uppgifter (de flesta fält är redigerbara i appen).</li>
+    <li><strong>Radera</strong> — radera ditt konto via <em>Inställningar → Konto &amp; delning → Radera konto</em>, eller mejla oss.</li>
+    <li><strong>Begränsa</strong> eller <strong>invända mot</strong> behandling.</li>
+    <li><strong>Dataportabilitet</strong> — begär export av dina uppgifter genom att mejla oss.</li>
+    <li><strong>Återkalla samtycke</strong> — återkalla push-, kamera- eller bild-behörigheter i enhetens inställningar.</li>
+    <li><strong>Lämna klagomål</strong> till Integritetsskyddsmyndigheten (IMY) om du anser att vi hanterat dina uppgifter felaktigt.</li>
+  </ul>
+
+  <h2>8. Uppgifter om ditt barn</h2>
+  <p>Samio är utformad för att användas av föräldrar och vårdnadshavare för att spåra sitt eget barn. Barnet är inte en användare av appen. Föräldern (kontoinnehavaren) ansvarar för att hantera barnets information och bestämma vad som loggas.</p>
+
+  <h2>9. Internationella överföringar</h2>
+  <p>Vi hostar uppgifter inom EU/EES där det är möjligt. Vissa tredjeparts-tjänster (t.ex. Apple, Expo Push) kan behandla uppgifter utanför EES med lämpliga skyddsåtgärder (Standardavtalsklausuler eller motsvarande).</p>
+
+  <h2>10. Ändringar av policyn</h2>
+  <p>Vi kan uppdatera den här policyn från tid till annan. Väsentliga ändringar meddelas i appen eller via e-post. Datumet "Senast uppdaterad" ovan visar aktuell version.</p>
+
+  <h2>11. Kontakt</h2>
+  <p>Frågor? Förfrågningar? Skriv till <a href="mailto:support@samio.app">support@samio.app</a>.</p>
+
+  <footer>
+    © Samio · Detta dokument finns även på <a href="privacy.html">English</a>.
+  </footer>
+</main>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Samio — Legal</title>
+  <style>
+    :root {
+      --plum: #3B2D50;
+      --cream: #FCEEEF;
+      --text: #2F2238;
+      --muted: #6E6077;
+      --accent: #8A6AAE;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", Inter, system-ui, sans-serif;
+      background: linear-gradient(180deg, #FCEEEF 0%, #F5ECF7 100%);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    main {
+      max-width: 560px;
+      width: 100%;
+      background: #FFFFFF;
+      border-radius: 24px;
+      padding: 40px 32px;
+      box-shadow: 0 10px 40px rgba(59, 45, 80, 0.08);
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: 32px;
+      color: var(--plum);
+      letter-spacing: -0.5px;
+    }
+    p.lead {
+      margin: 0 0 32px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.5;
+    }
+    .doc-group { margin-bottom: 24px; }
+    .doc-group h2 {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: var(--accent);
+      margin: 0 0 12px;
+      font-weight: 700;
+    }
+    .link-row {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    a {
+      display: block;
+      padding: 14px 16px;
+      background: #F8F5FA;
+      border-radius: 12px;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 600;
+      font-size: 15px;
+      transition: background 120ms ease;
+    }
+    a:hover { background: #F0EDFA; }
+    a span {
+      color: var(--muted);
+      font-weight: 500;
+      font-size: 13px;
+      margin-left: 8px;
+    }
+    footer {
+      margin-top: 32px;
+      font-size: 12px;
+      color: var(--muted);
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Samio</h1>
+    <p class="lead">Legal documents for the Samio app.</p>
+
+    <div class="doc-group">
+      <h2>Privacy Policy</h2>
+      <div class="link-row">
+        <a href="privacy.html">English <span>· Privacy Policy</span></a>
+        <a href="privacy-sv.html">Svenska <span>· Integritetspolicy</span></a>
+      </div>
+    </div>
+
+    <div class="doc-group">
+      <h2>Terms of Service</h2>
+      <div class="link-row">
+        <a href="terms.html">English <span>· Terms of Service</span></a>
+        <a href="terms-sv.html">Svenska <span>· Användarvillkor</span></a>
+      </div>
+    </div>
+
+    <footer>
+      © Samio. Questions? Email <a href="mailto:support@samio.app" style="display:inline;padding:0;background:none;color:var(--accent);">support@samio.app</a>.
+    </footer>
+  </main>
+</body>
+</html>

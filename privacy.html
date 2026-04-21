@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — Samio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <header>
+    <a class="back" href="index.html">← Back</a>
+    <h1>Privacy Policy</h1>
+    <p class="meta">Last updated: 21 April 2026 · <a href="privacy-sv.html">Svenska</a></p>
+  </header>
+
+  <p>This Privacy Policy describes how <strong>Samio</strong> ("we", "us") collects and processes personal data when you use the Samio mobile application (the "App"). We take your privacy seriously and only collect what we need to run the service.</p>
+
+  <h2>1. Data controller</h2>
+  <p>Samio is operated from Sweden. For privacy questions or to exercise your rights, contact us at <a href="mailto:support@samio.app">support@samio.app</a>.</p>
+
+  <h2>2. What we collect</h2>
+
+  <h3>Account data</h3>
+  <ul>
+    <li>Email address (from email sign-up or Sign in with Apple, including Apple's private relay addresses)</li>
+    <li>Display name</li>
+    <li>Password (stored only as a bcrypt hash — we never see your plain password)</li>
+    <li>Apple subject identifier (if you sign in with Apple)</li>
+  </ul>
+
+  <h3>Family and baby data</h3>
+  <ul>
+    <li>Your baby's name, date of birth, optional sex, and an optional photo you upload</li>
+    <li>Household information and invitations sent to co-parents</li>
+    <li>Feeding events, sleep sessions, diaper changes, milk inventory, growth measurements (weight, height, head circumference), and any notes you add</li>
+  </ul>
+
+  <h3>Device and technical data</h3>
+  <ul>
+    <li>Device identifier and platform (iOS/Android) for session management</li>
+    <li>Expo push notification token (only if you allow notifications)</li>
+    <li>IP address of requests, used for rate-limiting and security only — not retained long-term</li>
+  </ul>
+
+  <h2>3. Why we process your data (legal basis)</h2>
+  <ul>
+    <li><strong>To provide the service (contract, GDPR Art. 6.1.b):</strong> store your logs, sync data between you and your co-parent, keep you signed in, send reminders.</li>
+    <li><strong>Your consent (GDPR Art. 6.1.a):</strong> push notifications, photo library access, camera access. You can revoke these from your device settings at any time.</li>
+    <li><strong>Legitimate interest (GDPR Art. 6.1.f):</strong> security, fraud prevention, rate-limiting, detecting abuse.</li>
+  </ul>
+
+  <h2>4. Who we share data with</h2>
+  <p>We do <strong>not</strong> sell your data. We share only with:</p>
+  <ul>
+    <li><strong>Co-parents you invite</strong> to your household — they see the same baby data as you.</li>
+    <li><strong>Apple</strong> — if you use Sign in with Apple (their privacy policy applies to that flow).</li>
+    <li><strong>Expo Push Notification Service</strong> (operated by Expo, Inc.) — used to deliver reminders to your device. They see the push token and notification payload only.</li>
+    <li><strong>Our hosting provider</strong> — the database and API servers are operated on a reputable cloud provider within the EU/EEA.</li>
+  </ul>
+  <p>We do not use third-party analytics, advertising, or tracking SDKs.</p>
+
+  <h2>5. Data retention</h2>
+  <ul>
+    <li>Account and family data is kept for as long as your account exists.</li>
+    <li>Refresh tokens expire after 30 days of inactivity.</li>
+    <li>Invitations expire after 7 days.</li>
+    <li>Rate-limit records are kept for up to 24 hours.</li>
+    <li>When you delete your account (see section 7), all your personal data is permanently erased within a reasonable time, including revocation of any Apple Sign-In tokens.</li>
+  </ul>
+  <p>If your household has a co-parent, deleting your account removes you from it. The household and baby data stays with the co-parent. If you are the only member, the entire household and all logs are deleted.</p>
+
+  <h2>6. Security</h2>
+  <ul>
+    <li>All network traffic uses HTTPS/TLS.</li>
+    <li>Passwords are hashed with bcrypt.</li>
+    <li>Refresh tokens and reset tokens are peppered and hashed at rest.</li>
+    <li>Access tokens are short-lived and JWT-signed.</li>
+    <li>Token reuse detection is in place — stolen tokens are automatically revoked.</li>
+  </ul>
+  <p>No system is perfectly secure. If you suspect unauthorised access, email us immediately.</p>
+
+  <h2>7. Your rights</h2>
+  <p>Under the GDPR, you have the right to:</p>
+  <ul>
+    <li><strong>Access</strong> — ask what data we hold about you.</li>
+    <li><strong>Rectify</strong> — correct inaccurate data (most fields are editable in-app).</li>
+    <li><strong>Erase</strong> — delete your account via <em>Settings → Account & sharing → Delete account</em>, or email us.</li>
+    <li><strong>Restrict</strong> or <strong>object to</strong> processing.</li>
+    <li><strong>Data portability</strong> — request an export of your data by emailing us.</li>
+    <li><strong>Withdraw consent</strong> — revoke push/camera/photo permissions in your device settings.</li>
+    <li><strong>Lodge a complaint</strong> with the Swedish Authority for Privacy Protection (Integritetsskyddsmyndigheten, IMY) if you believe we have mishandled your data.</li>
+  </ul>
+
+  <h2>8. Data about your baby</h2>
+  <p>Samio is designed to be used by parents and caregivers to track their own child. The baby is not a user of the App. The parent (account holder) is responsible for managing their child's information and deciding what to log.</p>
+
+  <h2>9. International transfers</h2>
+  <p>We host data within the EU/EEA where possible. Some third-party services (e.g. Apple, Expo Push) may process data outside the EEA under appropriate safeguards (Standard Contractual Clauses or equivalent).</p>
+
+  <h2>10. Changes to this policy</h2>
+  <p>We may update this policy from time to time. Material changes will be announced in-app or by email. The "Last updated" date above reflects the current version.</p>
+
+  <h2>11. Contact</h2>
+  <p>Questions? Requests? Write to <a href="mailto:support@samio.app">support@samio.app</a>.</p>
+
+  <footer>
+    © Samio · This document is available in <a href="privacy-sv.html">Svenska</a>.
+  </footer>
+</main>
+</body>
+</html>
