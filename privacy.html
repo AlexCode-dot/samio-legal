@@ -11,7 +11,7 @@
   <header>
     <a class="back" href="index.html">← Back</a>
     <h1>Privacy Policy</h1>
-    <p class="meta">Last updated: 21 April 2026 · <a href="privacy-sv.html">Svenska</a></p>
+    <p class="meta">Last updated: 23 April 2026 · <a href="privacy-sv.html">Svenska</a></p>
   </header>
 
   <p>This Privacy Policy describes how <strong>Samio</strong> ("we", "us") collects and processes personal data when you use the Samio mobile application (the "App"). We take your privacy seriously and only collect what we need to run the service.</p>
@@ -25,13 +25,13 @@
   <ul>
     <li>Email address (from email sign-up or Sign in with Apple, including Apple's private relay addresses)</li>
     <li>Display name</li>
-    <li>Password (stored only as a bcrypt hash — we never see your plain password)</li>
+    <li>Password (stored only as an argon2id hash — we never see your plain password)</li>
     <li>Apple subject identifier (if you sign in with Apple)</li>
   </ul>
 
   <h3>Family and baby data</h3>
   <ul>
-    <li>Your baby's name, date of birth, optional sex, and an optional photo you upload</li>
+    <li>Your baby's name, date of birth, optional sex, and an optional photo you upload (photos are automatically re-encoded on our server to strip any embedded metadata like EXIF/GPS)</li>
     <li>Household information and invitations sent to co-parents</li>
     <li>Feeding events, sleep sessions, diaper changes, milk inventory, growth measurements (weight, height, head circumference), and any notes you add</li>
   </ul>
@@ -54,8 +54,9 @@
   <p>We do <strong>not</strong> sell your data. We share only with:</p>
   <ul>
     <li><strong>Co-parents you invite</strong> to your household — they see the same baby data as you.</li>
-    <li><strong>Apple</strong> — if you use Sign in with Apple (their privacy policy applies to that flow).</li>
+    <li><strong>Apple</strong> — if you use Sign in with Apple (their privacy policy applies to that flow), and the Apple Push Notification service for iOS reminders.</li>
     <li><strong>Expo Push Notification Service</strong> (operated by Expo, Inc.) — used to deliver reminders to your device. They see the push token and notification payload only.</li>
+    <li><strong>Resend</strong> — delivers transactional email (verification, password reset). They see your email address and the email content.</li>
     <li><strong>Our hosting provider</strong> — the database and API servers are operated on a reputable cloud provider within the EU/EEA.</li>
   </ul>
   <p>We do not use third-party analytics, advertising, or tracking SDKs.</p>
@@ -66,6 +67,8 @@
     <li>Refresh tokens expire after 30 days of inactivity.</li>
     <li>Invitations expire after 7 days.</li>
     <li>Rate-limit records are kept for up to 24 hours.</li>
+    <li>Server request logs are retained for up to 30 days for abuse detection and debugging, then purged.</li>
+    <li>Encrypted database backups rotate on a short window; when you delete your account, live data is erased immediately and backup snapshots are overwritten within the rotation period.</li>
     <li>When you delete your account (see section 7), all your personal data is permanently erased within a reasonable time, including revocation of any Apple Sign-In tokens.</li>
   </ul>
   <p>If your household has a co-parent, deleting your account removes you from it. The household and baby data stays with the co-parent. If you are the only member, the entire household and all logs are deleted.</p>
@@ -73,10 +76,11 @@
   <h2>6. Security</h2>
   <ul>
     <li>All network traffic uses HTTPS/TLS.</li>
-    <li>Passwords are hashed with bcrypt.</li>
+    <li>Passwords are hashed with argon2id (memory-hard, OWASP-recommended parameters).</li>
     <li>Refresh tokens and reset tokens are peppered and hashed at rest.</li>
-    <li>Access tokens are short-lived and JWT-signed.</li>
+    <li>Access tokens are short-lived, JWT-signed, and checked against session revocation on every request.</li>
     <li>Token reuse detection is in place — stolen tokens are automatically revoked.</li>
+    <li>Uploaded photos are re-encoded server-side to strip metadata (EXIF, GPS, embedded profiles) before storage.</li>
   </ul>
   <p>No system is perfectly secure. If you suspect unauthorised access, email us immediately.</p>
 
@@ -87,7 +91,7 @@
     <li><strong>Rectify</strong> — correct inaccurate data (most fields are editable in-app).</li>
     <li><strong>Erase</strong> — delete your account via <em>Settings → Account & sharing → Delete account</em>, or email us.</li>
     <li><strong>Restrict</strong> or <strong>object to</strong> processing.</li>
-    <li><strong>Data portability</strong> — request an export of your data by emailing us.</li>
+    <li><strong>Data portability</strong> — download a complete JSON copy of all your data in-app via <em>Settings → Account &amp; sharing → Export my data</em>.</li>
     <li><strong>Withdraw consent</strong> — revoke push/camera/photo permissions in your device settings.</li>
     <li><strong>Lodge a complaint</strong> with the Swedish Authority for Privacy Protection (Integritetsskyddsmyndigheten, IMY) if you believe we have mishandled your data.</li>
   </ul>

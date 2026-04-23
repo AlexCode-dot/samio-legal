@@ -11,7 +11,7 @@
   <header>
     <a class="back" href="index.html">← Tillbaka</a>
     <h1>Integritetspolicy</h1>
-    <p class="meta">Senast uppdaterad: 21 april 2026 · <a href="privacy.html">English</a></p>
+    <p class="meta">Senast uppdaterad: 23 april 2026 · <a href="privacy.html">English</a></p>
   </header>
 
   <p>Den här policyn beskriver hur <strong>Samio</strong> ("vi", "oss") samlar in och behandlar personuppgifter när du använder Samio-appen. Vi tar din integritet på allvar och samlar bara in det som behövs för att driva tjänsten.</p>
@@ -25,13 +25,13 @@
   <ul>
     <li>E-postadress (från registrering eller Sign in with Apple, inklusive Apples privata relä-adresser)</li>
     <li>Visningsnamn</li>
-    <li>Lösenord (lagras endast som bcrypt-hash — vi ser aldrig ditt lösenord i klartext)</li>
+    <li>Lösenord (lagras endast som argon2id-hash — vi ser aldrig ditt lösenord i klartext)</li>
     <li>Apple-subjektidentifierare (om du loggar in med Apple)</li>
   </ul>
 
   <h3>Familj- och bebisuppgifter</h3>
   <ul>
-    <li>Barnets namn, födelsedatum, eventuellt kön och en valfri bild du laddar upp</li>
+    <li>Barnets namn, födelsedatum, eventuellt kön och en valfri bild du laddar upp (bilder enkodas om automatiskt på vår server så att inbäddad metadata som EXIF/GPS tas bort)</li>
     <li>Information om hushåll och inbjudningar du skickar till medföräldrar</li>
     <li>Matningshändelser, sömnpass, blöjbyten, mjölklager, tillväxtmätningar (vikt, längd, huvudomfång) och eventuella anteckningar</li>
   </ul>
@@ -54,8 +54,9 @@
   <p>Vi säljer <strong>inte</strong> dina uppgifter. Vi delar endast med:</p>
   <ul>
     <li><strong>Medföräldrar du bjudit in</strong> till ditt hushåll — de ser samma bebisdata som du.</li>
-    <li><strong>Apple</strong> — om du använder Sign in with Apple (deras integritetspolicy gäller för det flödet).</li>
+    <li><strong>Apple</strong> — om du använder Sign in with Apple (deras integritetspolicy gäller för det flödet), samt Apples Push Notification-tjänst för iOS-påminnelser.</li>
     <li><strong>Expo Push Notification Service</strong> (drivs av Expo, Inc.) — levererar påminnelser till din enhet. De ser endast push-token och innehållet i notisen.</li>
+    <li><strong>Resend</strong> — levererar transaktionell e-post (verifiering, återställning av lösenord). De ser din e-postadress och e-postens innehåll.</li>
     <li><strong>Vår hostingleverantör</strong> — databasen och API-servrarna körs hos en etablerad molnleverantör inom EU/EES.</li>
   </ul>
   <p>Vi använder inga tredjeparts-analyser, annonser eller spårnings-SDK:er.</p>
@@ -66,6 +67,8 @@
     <li>Refresh-tokens upphör 30 dagar efter senaste användning.</li>
     <li>Inbjudningar upphör efter 7 dagar.</li>
     <li>Rate-limit-data sparas i upp till 24 timmar.</li>
+    <li>Serverloggar sparas upp till 30 dagar för felsökning och missbruksdetektering, därefter raderas de.</li>
+    <li>Krypterade databas-backups roterar på ett kort intervall; när du raderar ditt konto raderas aktiv data omedelbart och backup-snapshots skrivs över inom rotationsperioden.</li>
     <li>När du raderar ditt konto (se avsnitt 7) raderas all personlig data permanent inom rimlig tid, inklusive återkallning av eventuella Apple Sign-In-tokens.</li>
   </ul>
   <p>Om ditt hushåll har en medförälder tar raderingen av ditt konto bort dig från det. Hushållet och bebisdatan finns kvar hos medföräldern. Om du är enda medlemmen raderas hela hushållet och alla loggar.</p>
@@ -73,10 +76,11 @@
   <h2>6. Säkerhet</h2>
   <ul>
     <li>All nätverkstrafik använder HTTPS/TLS.</li>
-    <li>Lösenord hashas med bcrypt.</li>
+    <li>Lösenord hashas med argon2id (minnestung algoritm, OWASP-rekommenderade parametrar).</li>
     <li>Refresh-tokens och reset-tokens peppras och hashas i vila.</li>
-    <li>Access-tokens är kortlivade och JWT-signerade.</li>
+    <li>Access-tokens är kortlivade, JWT-signerade och kontrolleras mot session-återkallning vid varje förfrågan.</li>
     <li>Token-återanvändningsskydd finns — stulna tokens återkallas automatiskt.</li>
+    <li>Uppladdade bilder enkodas om på servern för att strippa metadata (EXIF, GPS, inbäddade profiler) innan lagring.</li>
   </ul>
   <p>Inget system är helt säkert. Om du misstänker obehörig åtkomst, mejla oss omedelbart.</p>
 
@@ -87,7 +91,7 @@
     <li><strong>Rätta</strong> — korrigera felaktiga uppgifter (de flesta fält är redigerbara i appen).</li>
     <li><strong>Radera</strong> — radera ditt konto via <em>Inställningar → Konto &amp; delning → Radera konto</em>, eller mejla oss.</li>
     <li><strong>Begränsa</strong> eller <strong>invända mot</strong> behandling.</li>
-    <li><strong>Dataportabilitet</strong> — begär export av dina uppgifter genom att mejla oss.</li>
+    <li><strong>Dataportabilitet</strong> — ladda ner en fullständig JSON-kopia av alla dina uppgifter direkt i appen via <em>Inställningar → Konto &amp; delning → Exportera min data</em>.</li>
     <li><strong>Återkalla samtycke</strong> — återkalla push-, kamera- eller bild-behörigheter i enhetens inställningar.</li>
     <li><strong>Lämna klagomål</strong> till Integritetsskyddsmyndigheten (IMY) om du anser att vi hanterat dina uppgifter felaktigt.</li>
   </ul>
